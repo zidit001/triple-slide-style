@@ -22,6 +22,7 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          green: "hsl(var(--primary-green))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -57,6 +58,9 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+      },
+      backgroundImage: {
+        'kdu-gradient': 'linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-green)) 100%)',
       },
       borderRadius: {
         lg: "var(--radius)",
