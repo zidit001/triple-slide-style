@@ -2,14 +2,10 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { useCallback, useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import kduGroupImage from "@/assets/kdu-florida-group.jpg";
 
 const slides = [
-  { id: 1, label: "Image 1" },
-  { id: 2, label: "Image 2" },
-  { id: 3, label: "Image 3" },
-  { id: 4, label: "Image 4" },
-  { id: 5, label: "Image 5" },
-  { id: 6, label: "Image 6" },
+  { id: 1, image: kduGroupImage, alt: "KDU Florida Global Inc. Members" },
 ];
 
 export const HeroSlider = () => {
@@ -54,11 +50,15 @@ export const HeroSlider = () => {
   return (
     <div className="relative max-w-6xl mx-auto mt-8">
       <div className="overflow-hidden rounded-lg" ref={emblaRef}>
-        <div className="flex gap-4">
+        <div className="flex">
           {slides.map((slide) => (
-            <div key={slide.id} className="flex-[0_0_calc(33.333%-0.67rem)] min-w-0">
-              <div className="w-full h-64 sm:h-80 md:h-96 bg-white/20 border-4 border-dashed border-white/50 rounded-lg flex items-center justify-center">
-                <span className="text-white text-3xl sm:text-4xl font-bold">{slide.label}</span>
+            <div key={slide.id} className="flex-[0_0_100%] min-w-0">
+              <div className="w-full h-[400px] sm:h-[500px] md:h-[600px] rounded-lg overflow-hidden">
+                <img 
+                  src={slide.image} 
+                  alt={slide.alt}
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           ))}
