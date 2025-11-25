@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import cashAppQR from "@/assets/qrcode-cashapp.png";
+import zelleQR from "@/assets/qrcode-zelle.png";
 
 interface DonationModalProps {
   open: boolean;
@@ -102,13 +104,25 @@ export const DonationModal = ({ open, onOpenChange }: DonationModalProps) => {
                 />
               </div>
 
-              <div className="bg-muted p-4 rounded-lg border-l-4 border-primary">
-                <p className="font-bold text-primary-green mb-2">Pay to:</p>
-                <p className="text-lg mb-2">
-                  Zelle Account: <strong>kdufloridainc@gmail.com</strong>
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  Please complete your payment via Zelle, then submit this form to notify us of your donation.
+              <div className="bg-muted p-6 rounded-lg border-l-4 border-primary">
+                <p className="font-bold text-primary-green mb-4 text-lg">Pay to:</p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* CashApp */}
+                  <div className="text-center">
+                    <p className="font-bold text-lg mb-3">CashApp</p>
+                    <img src={cashAppQR} alt="CashApp QR Code" className="w-48 h-48 mx-auto rounded-lg" />
+                  </div>
+                  {/* Zelle */}
+                  <div className="text-center">
+                    <p className="font-bold text-lg mb-3">Zelle</p>
+                    <img src={zelleQR} alt="Zelle QR Code" className="w-48 h-48 mx-auto rounded-lg" />
+                    <p className="text-sm mt-2">
+                      <strong>kdufloridainc@gmail.com</strong>
+                    </p>
+                  </div>
+                </div>
+                <p className="text-sm text-muted-foreground mt-4 text-center">
+                  Please complete your payment via CashApp or Zelle, then submit this form to notify us of your donation.
                 </p>
               </div>
 
